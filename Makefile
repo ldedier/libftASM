@@ -1,0 +1,97 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/10/03 19:03:26 by ldedier           #+#    #+#              #
+#    Updated: 2019/10/03 19:03:26 by ldedier          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = libfts.a
+GCC = gcc
+AS = nasm
+
+SRCDIR = srcs
+TESTDIR = test
+
+VPATH = $(SRCDIR) $(TESTDIR)
+OBJDIR = objs
+INCLUDESDIR = includes
+CHECKER = checker
+
+OK_COLOR = \x1b[32;01m
+EOC = \033[0m
+
+TEST_SRCS =		ft_bzero_tester.c\
+				ft_strcat_tester.c\
+				ft_isalpha_tester.c\
+				ft_isdigit_tester.c\
+				ft_isalnum_tester.c\
+				ft_isascii_tester.c\
+				ft_isprint_tester.c\
+				ft_toupper_tester.c\
+				ft_tolower_tester.c\
+				ft_puts_tester.c\
+				ft_strlen_tester.c\
+				ft_memset_tester.c\
+				ft_memcpy_tester.c\
+				ft_strdup_tester.c\
+				ft_putchar_tester.c\
+				ft_cat_tester.c\
+				ft_strcpy_tester.c\
+				ft_putendl_tester.c\
+				ft_puts_fd_tester.c\
+				ft_abs_tester.c\
+				ft_min_tester.c\
+				ft_max_tester.c\
+				main.c 
+
+SRCS =	ft_isdigit.s
+		#ascii_table.s ft_isalpha.s ft_bzero.s ft_strlen.s ft_isalnum.s \
+		ft_isdigit.s ft_isprint.s ft_isascii.s ft_islower.s ft_isupper.s \
+		ft_toupper.s ft_tolower.s ft_puts.s debug_get_table.s ft_strcat.s \
+		ft_memset.s ft_memcpy.s ft_strdup.s ft_cat.s ft_striter.s ft_striteri.s\
+		ft_strequ.s ft_putstr_fd.s
+
+OBJECTS = $(addprefix $(OBJDIR)/, $(SRCS:%.s=%.o))
+TEST_OBJECTS  = $(addprefix $(OBJDIR)/, $(TEST_SRCS:%.c=%.o))
+
+INCLUDES_NO_PREFIX = libftasm.h
+INCLUDES = $(addprefix $(INCLUDESDIR)/, $(INCLUDES_NO_PREFIX))
+INC = -I $(INCLUDESDIR)
+
+ASMFLAGS = -f macho64 
+CFLAGS = -Wall -Werror -Wextra
+LFLAGS = -L. -lfts
+
+all: $(NAME)
+
+$(CHECKER): $(NAME) $(TEST_OBJECTS)
+	$(GCC) $(TEST_OBJECTS) -o $(CHECKER) $(LFLAGS)
+	@echo "$(OK_COLOR)$(CHECKER) linked with success !$(EOC)"
+
+$(OBJDIR)/%.o: $(TESTDIR)/%.c $(INCLUDES) includes/libftasm_checker.h
+	@mkdir -p $(OBJDIR)
+	$(GCC) -c $< -o $@ $(CFLAGS) $(INC)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.s $(INCLUDES)
+	@mkdir -p $(OBJDIR)
+	$(AS) -o $@ $< $(ASMFLAGS) $(INC)
+
+$(NAME): $(OBJECTS)
+	ar rc $@ $^
+	ranlib $(NAME)
+	@echo "$(OK_COLOR)$(NAME) linked with success !$(EOC)"
+
+clean:
+	rm -rf $(OBJDIR)
+
+fclean: clean
+	rm -f $(NAME) $(CHECKER)
+
+re: fclean all
+
+.PHONY: all clean fclean re
