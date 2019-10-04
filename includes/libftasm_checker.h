@@ -15,8 +15,11 @@
 
 # include "libftasm.h"
 # include <ctype.h>
+# include <stdio.h>
+# include <signal.h>
 
-# define NB_FUNCTIONS 22
+# define NB_FUNCTIONS	22
+# define TIMEOUT_LIMIT	5
 
 # define RED        "\x1B[31m"
 # define GREEN      "\x1B[32m"
@@ -51,6 +54,9 @@ typedef struct		s_test_func
 	int				(*func)(void);
 }					t_test_func;
 
+extern int			g_verbose;
+extern t_test_func	g_funcs[NB_FUNCTIONS];
+
 int		ft_bzero_tester(void);
 int		ft_strcat_tester(void);
 int		ft_isalpha_tester(void);
@@ -76,4 +82,8 @@ int		ft_puts_fd_tester(void);
 int		ft_abs_tester(void);
 int		ft_min_tester(void);
 int		ft_max_tester(void);
+
+void    ft_compare_integers(int mine, int original);
+int     process_exit_status(int status, int *success);
+int     process_test(int index);
 #endif

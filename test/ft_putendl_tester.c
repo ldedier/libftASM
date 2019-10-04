@@ -14,5 +14,5 @@
 
 int		ft_putendl_tester(void)
 {
-	return (0);
+	return (1);
 }

@@ -14,5 +14,5 @@
 
 int		ft_cat_tester(void)
 {
-	return (0);
+	return (1);
 }

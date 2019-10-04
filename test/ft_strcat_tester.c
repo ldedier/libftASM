@@ -14,5 +14,5 @@
 
 int		ft_strcat_tester(void)
 {
-	return (0);
+	return (1);
 }

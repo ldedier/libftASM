@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include "libftasm_checker.h"
 
+int g_verbose = 1;
+
 t_test_func	g_funcs[NB_FUNCTIONS] = 
 {
 	{"bzero", &ft_bzero_tester},
@@ -44,24 +46,17 @@ int main(void)
 	int i;
 	int ret;
 	int success;
+	int status;
 
 	ret = 0;
 	success = 0;
 	i = 0;
 	while (i < NB_FUNCTIONS)
 	{
+		status = process_test(i);
 		printf("%s:%.*s", g_funcs[i].name, (int)((3 - 
 			(strlen(g_funcs[i].name) + 1) / 8)), "\t\t\t\t\t\t\t");
-		if (g_funcs[i].func())
-		{
-			ret |= 1;
-			printf("%sKO%s", RED, EOC);
-		}
-		else
-		{
-			printf("%sOK √%s", GREEN, EOC);
-			success++;
-		}
+		ret |= process_exit_status(status, &success);
 		printf("\n");
 		i++;
 	}

@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 NAME = libfts.a
-GCC = gcc
-AS = nasm
+GCC = gcc -g3
+AS = nasm -g
 
 SRCDIR = srcs
 TESTDIR = test
@@ -47,12 +47,13 @@ TEST_SRCS =		ft_bzero_tester.c\
 				ft_abs_tester.c\
 				ft_min_tester.c\
 				ft_max_tester.c\
+				checker_tools.c\
 				main.c 
 
-SRCS =	ft_isdigit.s
-		#ascii_table.s ft_isalpha.s ft_bzero.s ft_strlen.s ft_isalnum.s \
-		ft_isdigit.s ft_isprint.s ft_isascii.s ft_islower.s ft_isupper.s \
-		ft_toupper.s ft_tolower.s ft_puts.s debug_get_table.s ft_strcat.s \
+SRCS =	ft_isdigit.s ft_isalpha.s ft_isalnum.s ft_isprint.s ft_isascii.s \
+		ft_tolower.s ft_toupper.s ft_bzero.s
+		#ascii_table.s  ft_bzero.s ft_strlen.s  \
+		ft_puts.s debug_get_table.s ft_strcat.s \
 		ft_memset.s ft_memcpy.s ft_strdup.s ft_cat.s ft_striter.s ft_striteri.s\
 		ft_strequ.s ft_putstr_fd.s
 
@@ -70,7 +71,7 @@ LFLAGS = -L. -lfts
 all: $(NAME)
 
 $(CHECKER): $(NAME) $(TEST_OBJECTS)
-	$(GCC) $(TEST_OBJECTS) -o $(CHECKER) $(LFLAGS)
+	$(GCC)  $(TEST_OBJECTS) -o $(CHECKER) $(LFLAGS)
 	@echo "$(OK_COLOR)$(CHECKER) linked with success !$(EOC)"
 
 $(OBJDIR)/%.o: $(TESTDIR)/%.c $(INCLUDES) includes/libftasm_checker.h
@@ -79,7 +80,7 @@ $(OBJDIR)/%.o: $(TESTDIR)/%.c $(INCLUDES) includes/libftasm_checker.h
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.s $(INCLUDES)
 	@mkdir -p $(OBJDIR)
-	$(AS) -o $@ $< $(ASMFLAGS) $(INC)
+	$(AS) -o $@ $< $(ASMFLAGS) $(INC) -I $(SRCDIR)
 
 $(NAME): $(OBJECTS)
 	ar rc $@ $^

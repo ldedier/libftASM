@@ -14,5 +14,5 @@
 
 int		ft_strdup_tester(void)
 {
-	return (0);
+	return (1);
 }

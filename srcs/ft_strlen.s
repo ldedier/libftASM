@@ -3,8 +3,8 @@ SECTION .text
 _ft_strlen:
 
 	xor rbx rbx
-	jz end
+	jz .end
 
-end:
+.end:
 	mov rax, rbx
 	ret
