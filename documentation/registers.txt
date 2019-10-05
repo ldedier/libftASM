@@ -1,16 +1,16 @@
 64		32		16		8
 
-rax		eax		ax		al
-rbx		ebx		bx		bl
-rcx		ecx		cx		cl
-rdx		edx		dx		dl
-rsi		esi		si		sil
-rdi		edi		di		dil
-rbp		ebp		bp		bpl
+rax		eax		ax		al	(#0 syscall (defines which syscall))
+rbx		ebx		bx		bl	
+rcx		ecx		cx		cl	(#4 integers/pointers)
+rdx		edx		dx		dl	(#3 integers/pointers) (#3 syscall arg)
+rsi		esi		si		sil	(#2 integers/pointers) (#2 syscall arg)
+rdi		edi		di		dil	(#1 integers/pointers) (#1 syscall arg)
+rbp		ebp		bp		bpl	
 rsp		esp		sp		spl
-r8		r8d		r8w		r8b
-r9		r9d		r9w		r9b
-r10		r10d		r10w		r10b
+r8		r8d		r8w		r8b	(#5 integers/pointers) (#5 syscall arg)
+r9		r9d		r9w		r9b	(#6 integers/pointers) (#6 syscall arg)
+r10		r10d		r10w		r10b	(#4 syscall arg)
 r11		r11d		r11w		r11b
 r12		r12d		r12w		r12b
 r13		r13d		r13w		r13b

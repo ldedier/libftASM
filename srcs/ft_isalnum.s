@@ -1,7 +1,9 @@
+section .text
+
 global _ft_isalnum
 
-%include		'ft_isalpha.s'
-%include		'ft_isdigit.s'
+extern			_ft_isalpha
+extern			_ft_isdigit
 
 _ft_isalnum:
 	xor rax, rax

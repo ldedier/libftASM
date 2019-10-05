@@ -12,7 +12,29 @@
 
 #include "libftasm_checker.h"
 
-int		ft_strcat_tester(void)
+int     ft_strcat_tester(void)
 {
-	return (1);
+	char *str1;
+	char *str2;
+
+	str1 = ft_strnew(100);
+	str2 = ft_strnew(100);
+
+	strcat(str1, "salut");
+	ft_strcat(str2, "salut");
+
+	strcat(&str1[3], "okoklespotes");
+	ft_strcat(&str2[3], "okoklespotes");
+
+	strcat(&str1[10], "hehehe on strcat encore une fois haha");
+	ft_strcat(&str2[10], "hehehe on strcat encore une fois haha");
+	if (strcmp(str1, str2))
+	{
+		free(str1);
+		free(str2);
+		return (1);
+	}
+	free(str1);
+	free(str2);
+	return (0);
 }

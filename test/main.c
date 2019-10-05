@@ -14,6 +14,7 @@
 #include "libftasm_checker.h"
 
 int g_verbose = 1;
+int g_asynchronous = 1;
 
 t_test_func	g_funcs[NB_FUNCTIONS] = 
 {
@@ -31,10 +32,10 @@ t_test_func	g_funcs[NB_FUNCTIONS] =
 	{"memset", &ft_memset_tester},
 	{"memcpy", &ft_memcpy_tester},
 	{"strdup", &ft_strdup_tester},
-	{"putchar", &ft_putchar_tester},
 	{"cat", &ft_cat_tester},
+	//bonusses
 	{"strcpy", &ft_strcpy_tester},
-	{"putendl", &ft_putendl_tester},
+	{"putchar", &ft_putchar_tester},
 	{"puts_fd", &ft_puts_fd_tester},
 	{"abs", &ft_abs_tester},
 	{"min", &ft_min_tester},
@@ -53,10 +54,28 @@ int main(void)
 	i = 0;
 	while (i < NB_FUNCTIONS)
 	{
-		status = process_test(i);
-		printf("%s:%.*s", g_funcs[i].name, (int)((3 - 
-			(strlen(g_funcs[i].name) + 1) / 8)), "\t\t\t\t\t\t\t");
-		ret |= process_exit_status(status, &success);
+		if (g_asynchronous)
+		{
+			status = process_test(i);
+			printf("%s:%.*s", g_funcs[i].name, (int)((3 - 
+				(strlen(g_funcs[i].name) + 1) / 8)), "\t\t\t\t\t\t\t");
+			ret |= process_exit_status(status, &success);
+		}
+		else
+		{
+			status = g_funcs[i].func();
+			printf("%s:%.*s", g_funcs[i].name, (int)((3 - 
+				(strlen(g_funcs[i].name) + 1) / 8)), "\t\t\t\t\t\t\t");
+			if (status)
+			{
+				printf("KO");
+			}
+			else
+			{
+				printf("OK");
+				success++;
+			}
+		}
 		printf("\n");
 		i++;
 	}

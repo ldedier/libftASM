@@ -14,5 +14,18 @@
 
 int		ft_strdup_tester(void)
 {
-	return (1);
+	char *str1;
+	char *str2;
+
+	str1 = ft_strdup(TEST_STR);
+	str2 = strdup(TEST_STR);
+	if (strcmp(str1, str2))
+	{
+		free(str1);
+		free(str2);
+		return (1);
+	}
+	free(str1);
+	free(str2);
+	return (0);
 }

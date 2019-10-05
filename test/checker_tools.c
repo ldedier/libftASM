@@ -12,6 +12,20 @@
 
 #include "libftasm_checker.h"
 
+char *ft_strnew(size_t size)
+{
+	char *str;
+
+	str = malloc(size + 1);
+	bzero(str, size + 1);
+	return (str);
+}
+
+void	ft_compare_strings(char *mine, char *original)
+{
+	dprintf(2, "mine: %s, wanted: %s\n", mine, original);
+}
+
 void	ft_compare_integers(int mine, int original)
 {
 	dprintf(2, "mine: %d, wanted: %d\n", mine, original);
@@ -40,6 +54,7 @@ int		process_test(int index)
 			kill(pid_test, SIGTERM);
 		else if (pid_received == pid_timeout)
 			kill(pid_timeout, SIGTERM);
+//		wait(NULL);
 		return (ret);
 	}
 	exit(1);

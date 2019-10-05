@@ -18,8 +18,12 @@
 # include <stdio.h>
 # include <signal.h>
 
-# define NB_FUNCTIONS	22
+# define NB_FUNCTIONS	21
 # define TIMEOUT_LIMIT	5
+
+
+# define TEST_STR		"This is a test string hehehehe I like to hardcode"
+# define TEST_STR_NL	TEST_STR "\n"
 
 # define RED        "\x1B[31m"
 # define GREEN      "\x1B[32m"
@@ -86,4 +90,6 @@ int		ft_max_tester(void);
 void    ft_compare_integers(int mine, int original);
 int     process_exit_status(int status, int *success);
 int     process_test(int index);
+char	*ft_strnew(size_t size);
+void	ft_compare_strings(char *mine, char *original);
 #endif
