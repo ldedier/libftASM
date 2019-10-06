@@ -1,29 +1,36 @@
 section .text
 
-global _ft_cat
+global 	_ft_cat
+
+extern	_ft_puts
+
+;rdi : int fd
 
 _ft_cat:
 
-	;rdi : int fd
+	sub rsp, 4096 ; 4096
+;	push rdi
 
-	xor rcx, rcx
+.read_chunk:
+
+;	pop rdi
+	mov rax, 0x2000003 ; read opcode
+	mov rsi, rsp ; get address of the top of the stack in rsi (buffer)
+;	add rsi, 8
+	mov edx, 4095
 	push rdi
+	syscall ; read
+	cmp rax, 0
+	jl .end_cat
 
-.fill_chars:
-	
-	xor rdx, rdx
-	
-	cmp [rsi + rcx], rdx
-	je .end
-	mov byte dl, [rsi + rcx]
-	mov byte [rdi + rcx], dl
-	inc rcx
-	jmp .fill_chars
+	mov rcx, 0
+	mov byte [rsi + rax], cl ; buffer[ret] = 0
 
-.end:
-	xor rdx, rdx
-	mov [rdi + rcx], rdx
-	pop rdi
-	mov rax, rdi
+	mov rdi, rsi
+	call _ft_puts
+	jmp .read_chunk
+
+.end_cat:
+;	pop rdi
+	add rsp, 4096
 	ret
-
