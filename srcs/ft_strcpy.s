@@ -10,7 +10,10 @@ _ft_strcpy:
 	xor rcx, rcx
 
 .fill_chars:
+	
+	
 	xor rdx, rdx
+	
 	cmp [rsi + rcx], rdx
 	je .end
 	mov byte dl, [rsi + rcx]

@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = libfts.a
-GCC = gcc
+GCC = gcc -fsanitize=address
 AS = nasm -g
 
 SRCDIR = srcs
@@ -52,7 +52,8 @@ TEST_SRCS =		ft_bzero_tester.c\
 SRCS =	ft_isdigit.s ft_isalpha.s ft_isalnum.s ft_isprint.s ft_isascii.s\
 		ft_tolower.s ft_toupper.s ft_bzero.s ft_strlen.s ft_strcat.s\
 		ft_strcpy.s ft_puts.s ft_memset.s ft_memcpy.s ft_strdup.s\
-		ft_hello.s
+		ft_hello.s ft_strcmp.s
+
 		#ascii_table.s  ft_bzero.s ft_strlen.s  \
 		ft_puts.s debug_get_table.s ft_strcat.s \
 		ft_memset.s ft_memcpy.s ft_strdup.s ft_cat.s ft_striter.s ft_striteri.s\

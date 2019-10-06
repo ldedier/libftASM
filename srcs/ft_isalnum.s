@@ -10,12 +10,15 @@ _ft_isalnum:
 
 .check_alpha:
 	
+	sub rsp, 8
 	call _ft_isalpha
 	cmp rax, 0
 	je .check_digit
+	add rsp, 8
 	ret
 
 .check_digit:
 	call _ft_isdigit
+	add rsp, 8
 	ret
 

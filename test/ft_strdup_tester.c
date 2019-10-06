@@ -19,6 +19,10 @@ int		ft_strdup_tester(void)
 
 	str1 = ft_strdup(TEST_STR);
 	str2 = strdup(TEST_STR);
+
+//	ft_strcpy(str1, TEST_STR);
+	printf("mine: %s\n", str1);
+	printf("original: %s\n", str2);
 	if (strcmp(str1, str2))
 	{
 		free(str1);

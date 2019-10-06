@@ -43,4 +43,5 @@ void				ft_puts_fd(char const *s, int fd);
 int					ft_abs(int a);
 int					ft_min(int a, int b);
 int					ft_max(int a, int b);
+int					ft_strcmp(const char *s1, const char *s2);
 #endif

@@ -54,31 +54,36 @@ int main(void)
 	i = 0;
 	while (i < NB_FUNCTIONS)
 	{
-		if (g_asynchronous)
-		{
-			status = process_test(i);
-			printf("%s:%.*s", g_funcs[i].name, (int)((3 - 
-				(strlen(g_funcs[i].name) + 1) / 8)), "\t\t\t\t\t\t\t");
-			ret |= process_exit_status(status, &success);
-		}
-		else
-		{
-			status = g_funcs[i].func();
-			printf("%s:%.*s", g_funcs[i].name, (int)((3 - 
-				(strlen(g_funcs[i].name) + 1) / 8)), "\t\t\t\t\t\t\t");
-			if (status)
+//		if (!strcmp(g_funcs[i].name, "strdup"))
+//		{
+			if (g_asynchronous)
 			{
-				printf("KO");
+				status = process_test(i);
+				printf("%s:%.*s", g_funcs[i].name, (int)((3 - 
+								(strlen(g_funcs[i].name) + 1) / 8)), "\t\t\t\t\t\t\t");
+				ret |= process_exit_status(status, &success);
 			}
 			else
 			{
-				printf("OK");
-				success++;
+				status = g_funcs[i].func();
+				printf("%s:%.*s", g_funcs[i].name, (int)((3 - 
+								(strlen(g_funcs[i].name) + 1) / 8)), "\t\t\t\t\t\t\t");
+				if (status)
+				{
+					printf("KO");
+				}
+				else
+				{
+					printf("OK");
+					success++;
+				}
 			}
-		}
+//		}
 		printf("\n");
 		i++;
 	}
 	printf("\npassed %d / %d tests !\n", success, NB_FUNCTIONS);
+	ft_strcmp("dqdqw", "dsad");
+	printf("hehe\n");
 	return (ret);
 }
