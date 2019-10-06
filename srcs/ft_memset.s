@@ -8,14 +8,18 @@ _ft_memset:
 	;rsi : int c
 	;rdx : size_t size
 
+	push rdi
+
 .fill_chars:
 	cmp rdx, 0
 	je .end
 	mov byte [rdi], sil
 	sub rdx, 1
-	add rdi, 1
+	inc rdi
 	jmp .fill_chars
 
 .end:
+	pop rdi
+	mov rax, rdi
 	ret
 

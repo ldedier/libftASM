@@ -8,6 +8,9 @@ _ft_memcpy:
 	;rsi : void *src
 	;rdx : size_t size
 
+
+	push rdi
+
 .fill_quad_word:
 
 	cmp rdx, 8
@@ -30,5 +33,7 @@ _ft_memcpy:
 	jmp .fill_chars
 
 .end:
+	pop rdi
+	mov rax, rdi
 	ret
 

@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 19:10:50 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/03 19:10:50 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/06 11:28:47 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void				ft_putchar(char c);
 void				ft_cat(int fd);
 
 char				*ft_strcpy(char *dest, char const *src);
-void				ft_putendl(char const *s);
 void				ft_puts_fd(char const *s, int fd);
 int					ft_abs(int a);
 int					ft_min(int a, int b);

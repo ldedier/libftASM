@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup_tester.c                                 :+:      :+:    :+:   */
+/*   ok.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 11:02:58 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/06 10:52:50 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/06 11:36:04 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/06 11:48:37 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftasm_checker.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
 
-int		ft_strdup_tester(void)
+void	ft_cat(int fd)
 {
-	char *str1;
-	char *str2;
+	char buffer[20];
+	int ret;
+	int i = 0;
 
-	str1 = ft_strdup(TEST_STR);
-	str2 = strdup(TEST_STR);
-	if (strcmp(str1, str2))
+	(void)i;
+	while ((ret = read(fd, buffer, 20)))
 	{
-		free(str1);
-		free(str2);
-		return (1);
+		buffer[ret] = 0;
+		printf("%s", buffer);
+		//printf("%s (%d)", buffer, i++);
 	}
-	free(str1);
-	free(str2);
+}
+
+int main(int argc, char **argv)
+{
+	(void)argc;
+	(void)argv;
+
+	int fd = open("Makefile", O_RDONLY);
+	ft_cat(0);
 	return (0);
 }

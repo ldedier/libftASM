@@ -1,14 +1,12 @@
 section .text
 
-global _ft_strcpy
+global _ft_cat
 
-_ft_strcpy:
+_ft_cat:
 
-	;rdi : char *dest
-	;rsi : char *src
+	;rdi : int fd
 
 	xor rcx, rcx
-
 	push rdi
 
 .fill_chars:

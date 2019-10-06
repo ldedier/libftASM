@@ -7,9 +7,10 @@ extern _ft_strcpy
 
 _ft_strcat:
 
-	sub rsp, 8
+	push rdi
 	call _ft_strlen
 	add rdi, rax
 	call _ft_strcpy
-	add rsp, 8
+	pop rdi
+	mov rax, rdi
 	ret

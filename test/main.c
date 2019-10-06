@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 18:33:39 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/03 18:33:39 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/06 10:48:54 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_test_func	g_funcs[NB_FUNCTIONS] =
 	{"memcpy", &ft_memcpy_tester},
 	{"strdup", &ft_strdup_tester},
 	{"cat", &ft_cat_tester},
-	//bonusses
+	//bonus
 	{"strcpy", &ft_strcpy_tester},
 	{"putchar", &ft_putchar_tester},
 	{"puts_fd", &ft_puts_fd_tester},

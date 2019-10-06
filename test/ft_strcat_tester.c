@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 11:02:58 by ldedier           #+#    #+#             */
-/*   Updated: 2019/03/28 11:02:58 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/06 09:34:22 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int     ft_strcat_tester(void)
 
 	strcat(&str1[10], "hehehe on strcat encore une fois haha");
 	ft_strcat(&str2[10], "hehehe on strcat encore une fois haha");
-	if (strcmp(str1, str2))
+	if (ft_strcmp(str1, str2))
 	{
 		free(str1);
 		free(str2);
