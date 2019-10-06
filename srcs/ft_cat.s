@@ -9,11 +9,11 @@ extern	_ft_puts
 _ft_cat:
 
 	sub rsp, 4096 ; 4096
-;	push rdi
+	push rdi
 
 .read_chunk:
 
-;	pop rdi
+	pop rdi
 	mov rax, 0x2000003 ; read opcode
 	mov rsi, rsp ; get address of the top of the stack in rsi (buffer)
 ;	add rsi, 8
@@ -31,6 +31,6 @@ _ft_cat:
 	jmp .read_chunk
 
 .end_cat:
-;	pop rdi
+	pop rdi
 	add rsp, 4096
 	ret
