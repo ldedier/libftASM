@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 NAME = libfts.a
-GCC = gcc -g3# -fsanitize=address
-AS = nasm -g
+GCC = gcc -g3 -fsanitize=address
+AS = nasm -g 
 
 SRCDIR = srcs
 TESTDIR = test
@@ -68,7 +68,7 @@ ASMFLAGS = -f macho64
 CFLAGS = -Wall -Werror -Wextra
 LFLAGS = -L. -lfts
 
-all: $(NAME)
+all: $(CHECKER)
 
 $(CHECKER): $(NAME) $(TEST_OBJECTS)
 	$(GCC)  $(TEST_OBJECTS) -o $(CHECKER) $(LFLAGS) -Wl,-no_pie

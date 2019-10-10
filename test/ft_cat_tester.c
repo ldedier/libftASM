@@ -37,6 +37,7 @@ int		ft_cat_tester(void)
 
 	fd = open("Makefile", O_RDONLY);
 	//fd = 0; 
+//	return (0);
 	ft_cat(fd);
 	return (0);
 }
