@@ -10,12 +10,16 @@ _ft_memset:
 
 	push rdi
 
-	mov ecx, edx ; set counter to size
+.fill_chars:
+	cmp rdx, 0
+	je .end
+	mov byte [rdi], sil
+	sub rdx, 1
+	inc rdi
+	jmp .fill_chars
 
-	mov al, sil ; set byte to c
-	
-	rep stosb
-	
+.end:
 	pop rdi
 	mov rax, rdi
 	ret
+

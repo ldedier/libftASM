@@ -9,6 +9,9 @@ _ft_strcat:
 
 	push rdi
 	call _ft_strlen
+	pop rdi
+	mov rcx, rdi
+	push rcx
 	add rdi, rax
 	call _ft_strcpy
 	pop rdi

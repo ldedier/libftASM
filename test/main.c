@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 18:33:39 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/06 10:48:54 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/10 19:41:30 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 int g_verbose = 1;
 int g_asynchronous = 1;
+//char *totest = "strcat";
+char *totest = NULL;
 
 t_test_func	g_funcs[NB_FUNCTIONS] = 
 {
@@ -54,8 +56,8 @@ int main(void)
 	i = 0;
 	while (i < NB_FUNCTIONS)
 	{
-//		if (!strcmp(g_funcs[i].name, "strdup"))
-//		{
+		if (!totest || (totest && !strcmp(g_funcs[i].name, totest)))
+		{
 			if (g_asynchronous)
 			{
 				status = process_test(i);
@@ -78,7 +80,7 @@ int main(void)
 					success++;
 				}
 			}
-//		}
+		}
 		printf("\n");
 		i++;
 	}

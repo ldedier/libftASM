@@ -2,18 +2,14 @@ section .text
 
 global 	_ft_puts
 extern	_ft_strlen
+extern	_ft_putstr
 
 _ft_puts:
 
 .put_str:
 
 	sub rsp, 8
-	mov rsi, rdi ; pass str to 2nd parameter of write
-	call _ft_strlen
-	mov rdx, rax ; nbytes
-	mov edi, 1 ; fd
-	mov rax, 0x2000004; write
-	syscall
+	call _ft_putstr
 	add rsp, 8
 
 .put_nl:

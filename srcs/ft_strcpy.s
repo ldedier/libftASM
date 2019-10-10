@@ -2,30 +2,25 @@ section .text
 
 global _ft_strcpy
 
+extern _ft_strlen
+extern _ft_memcpy
+
 _ft_strcpy:
 
-	;rdi : char *dest
-	;rsi : char *src
-
-	xor rcx, rcx
-
+	push rdi
+	call _ft_strlen
+	pop rdi
+	
+	mov rdx, rax
+	
+	push rax
 	push rdi
 
-.fill_chars:
+	call _ft_memcpy
 	
-	xor rdx, rdx
-	
-	cmp [rsi + rcx], rdx
-	je .end
-	mov byte dl, [rsi + rcx]
-	mov byte [rdi + rcx], dl
-	inc rcx
-	jmp .fill_chars
-
-.end:
-	xor rdx, rdx
-	mov [rdi + rcx], rdx
 	pop rdi
+	pop rax
+	mov [edi + eax], 0
+
 	mov rax, rdi
 	ret
-

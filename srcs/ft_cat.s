@@ -2,7 +2,7 @@ section .text
 
 global 	_ft_cat
 
-extern	_ft_puts
+extern	_ft_putstr
 extern	_ft_hello
 
 ;rdi : int fd
@@ -10,8 +10,8 @@ extern	_ft_hello
 _ft_cat:
 
 	sub rsp, 4096 + 8; 4096
-	push rdi
 	mov rsi, rsp ; get address of the top of the stack in rsi (buffer)
+	push rdi
 
 .read_chunk:
 
@@ -23,11 +23,13 @@ _ft_cat:
 	syscall
 	pop rsi
 	cmp rax, 0
-	jl .end_cat
+	jle .end_cat
 	mov rcx, 0
 	mov byte [rsi + rax], cl ; buffer[ret] = 0
 	mov rdi, rsi
-	call _ft_puts ; putstr instead
+	push rsi
+	call _ft_putstr ; putstr instead
+	pop rsi
 	jmp .read_chunk
 
 .end_cat:

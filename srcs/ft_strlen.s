@@ -1,18 +1,15 @@
 global _ft_strlen
 
-_ft_strlen:
-
 	;rdi : char *str
 
-	xor rax, rax
-.count_len:
+_ft_strlen:
 
-	mov byte cl, [rdi + rax]
-	cmp cl, 0
-	jz .end
-	inc rax
-	jmp .count_len
-
-.end:
+	xor rcx, rcx
+	not rcx ; ecx = -1
+	xor al, al
+	cld
+	repne scasb ; ecx = -strlen - 2
+	not rcx ; reversing all bits of a negative number results in its absolute value - 1 (ecx = strlen + 1)
+	dec rcx
+	mov rax, rcx
 	ret
-
