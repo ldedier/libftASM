@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = libfts.a
-GCC = gcc -g3 -fsanitize=address
+GCC = gcc -g3 #-fsanitize=address
 AS = nasm -g 
 
 SRCDIR = srcs

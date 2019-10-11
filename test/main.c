@@ -15,7 +15,7 @@
 
 int g_verbose = 1;
 int g_asynchronous = 1;
-//char *totest = "strcat";
+//char *totest = "memcpy";
 char *totest = NULL;
 
 t_test_func	g_funcs[NB_FUNCTIONS] = 

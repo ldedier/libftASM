@@ -9,8 +9,8 @@ _ft_memcpy:
 	;rdx : size_t size
 
 	push rdi
-	rep movsb
 	mov rcx, rdx
+	rep movsb
 	pop rdi
 	mov rax, rdi
 	ret
