@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 11:02:58 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/10 18:05:02 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/11 16:08:59 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		ft_cat_test(int fdin, char *filename)
 		return (1);
 	}
 	close(fd);
-	if (!strcmp(buffer, buffer2))
+	if (strcmp(buffer, buffer2))
 	{
 		if (g_verbose)
 		{
@@ -76,7 +76,7 @@ int		ft_cat_tester(void)
 	i = 0;
 	while (i < 1000)
 	{
-		if (ft_cat_test(fds[0], "Makefile"))
+		if (ft_cat_test(fds[0], "auteur"))
 			return (1);
 		i++;
 	}

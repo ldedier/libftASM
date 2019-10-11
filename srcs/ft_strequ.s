@@ -1,12 +1,8 @@
 section .text
 
-global _ft_strcmp
+global _ft_strequ
 
 extern			_ft_strlen
-
-
-
-
 
 _ft_strequ:
 
@@ -35,16 +31,9 @@ _ft_strequ:
 
 	mov rcx, rax ; get minimum of both strlen
 
-	push rcx
 	xor rax, rax
 	cld
 	repe cmpsb
-	jz .equals
 	setz al
 	add rsp, 8
 	ret
-
-
-.equals
-	xor rax, rax
-	ret 

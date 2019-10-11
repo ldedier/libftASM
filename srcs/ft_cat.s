@@ -28,7 +28,7 @@ _ft_cat:
 	mov byte [rsi + rax], cl ; buffer[ret] = 0
 	mov rdi, rsi
 	push rsi
-	call _ft_putstr ; putstr instead
+	call _ft_putstr
 	pop rsi
 	jmp .read_chunk
 

@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 19:10:50 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/06 11:28:47 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/11 17:18:45 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char				*ft_strdup(char const *s);
 
 void				ft_cat(int fd);
 
-int					ft_putchar(char c);
+int					ft_putchar(int c);
 char				*ft_strcpy(char *dest, char const *src);
 void				ft_putstr_fd(char const *s, int fd);
 int					ft_strequ(const char *s1, const char *s2);

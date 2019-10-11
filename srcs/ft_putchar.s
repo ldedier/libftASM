@@ -1,21 +1,19 @@
 section .text
 
 global 	_ft_putchar
-extern	_putchar
 
 _ft_putchar:
 
-	sub rsp, 8
-	call _putchar
-	add rsp, 8
-	ret
+	mov rsi, rdi
 
-;;	push rdi
-;	mov rsi, rsp
-;	mov edx, 1 ; nbytes
-;	mov rax, 0x2000004; write
-;	mov edi, 1
-;	syscall
-;	pop rsi
-;	mov rax, rsi
-;	ret
+	mov edx, 1 ; nbytes
+	mov rax, 0x2000004; write
+	mov edi, 1
+
+	push rsi ; push on top of the stack
+	mov rsi, rsp ; get address of the top of the stack (rsp) in rsi
+
+	syscall
+	pop rsi ; pop what we pushed on the stack
+	mov rax, rsi
+	ret

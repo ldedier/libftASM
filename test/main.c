@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 18:33:39 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/10 19:41:30 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/11 17:20:32 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "libftasm_checker.h"
 
 int g_verbose = 1;
-int g_asynchronous = 0;
-char *totest = "puts";
-//char *totest = NULL;
+int g_asynchronous = 1;
+//char *totest = "putchar";
+char *totest = NULL;
 
 t_test_func	g_funcs[NB_FUNCTIONS] = 
 {
@@ -56,7 +56,7 @@ int main(void)
 	while (i < NB_FUNCTIONS)
 	{
 		
-		if ((!totest || (totest && !strcmp(g_funcs[i].name, totest))) && strcmp(g_funcs[i].name, "putchar"))
+		if ((!totest || (totest && !strcmp(g_funcs[i].name, totest))))
 		{
 			if (g_asynchronous)
 			{

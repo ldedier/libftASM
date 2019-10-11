@@ -6,7 +6,7 @@
 #    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/03 19:03:26 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/10 18:07:34 by ldedier          ###   ########.fr        #
+#    Updated: 2019/10/11 18:15:46 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,8 @@ TEST_SRCS =		ft_bzero_tester.c\
 SRCS =	ft_isdigit.s ft_isalpha.s ft_isalnum.s ft_isprint.s ft_isascii.s\
 		ft_tolower.s ft_toupper.s ft_bzero.s ft_strlen.s ft_strcat.s\
 		ft_strcpy.s ft_puts.s ft_memset.s ft_memcpy.s ft_strdup.s\
-		ft_hello.s ft_cat.s ft_putstr.s ft_putchar.s #ft_atoi.s ft_strequ.s
+		ft_hello.s ft_cat.s ft_putstr.s ft_putchar.s ft_putstr_fd.s\
+		ft_strequ.s #ft_atoi.s ft_strequ.s
 
 OBJECTS = $(addprefix $(OBJDIR)/, $(SRCS:%.s=%.o))
 TEST_OBJECTS  = $(addprefix $(OBJDIR)/, $(TEST_SRCS:%.c=%.o))

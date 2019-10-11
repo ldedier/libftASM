@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ_tester.c                                 :+:      :+:    :+:   */
+/*   ok.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 11:02:58 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/11 18:15:06 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/11 15:38:17 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/11 16:10:42 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftasm_checker.h"
+#include "libftasm.h"
+#include <fcntl.h>
 
-int		ft_strequ_tester(void)
+int main(int argc, char **argv)
 {
-	if (ft_strequ("", "dodod"))
-		return (1);
-	if (ft_strequ("do", "dodod"))
-		return (1);
-	if (ft_strequ("do", "doK"))
-		return (1);
-	if (ft_strequ("dodododod", "zboulex"))
-		return (1);
-	if (!ft_strequ("dodod", "dodod"))
-		return (1);
-	if (!ft_strequ("", ""))
-		return (1);
-	if (!ft_strequ("OUAI", "OUAI"))
-		return (1);
+	(void)argc;
+	(void)argv;
+
+//	ft_puts("tamer en string hehehe");
+	int fd = open("auteur", O_RDONLY);
+	ft_cat(0);
+//	int len = ft_strlen("20000");
 	return (0);
 }

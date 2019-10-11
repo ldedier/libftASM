@@ -1,15 +1,17 @@
 section .text
 
-global 	_ft_putstr
+global 	_ft_putstr_fd
 extern	_ft_strlen
 
-_ft_putstr:
+_ft_putstr_fd:
 
 	sub rsp, 8
-	mov rsi, rdi ; pass str to 2nd parameter of write
+	push rdi
+	push rsi
 	call _ft_strlen
+	pop rdi
+	pop rsi
 	mov rdx, rax ; nbytes
-	mov edi, 1 ; fd
 	mov rax, 0x2000004 ; write
 	syscall
 	add rsp, 8
