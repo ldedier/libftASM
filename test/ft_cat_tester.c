@@ -54,7 +54,7 @@ int		ft_cat_test(int fdin, char *filename)
 		return (1);
 	}
 	close(fd);
-	if (strcmp(buffer, buffer2))
+	if (!strcmp(buffer, buffer2))
 	{
 		if (g_verbose)
 		{
@@ -69,8 +69,16 @@ int		ft_cat_test(int fdin, char *filename)
 int		ft_cat_tester(void)
 {
 	int		fds[2];
+	int i;
 
 	pipe(fds);
 	dup2(fds[1], 1);
-	return (ft_cat_test(fds[0], "Makefile"));
+	i = 0;
+	while (i < 1000)
+	{
+		if (ft_cat_test(fds[0], "Makefile"))
+			return (1);
+		i++;
+	}
+	return (0);
 }

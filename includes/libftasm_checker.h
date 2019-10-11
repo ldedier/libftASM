@@ -90,4 +90,5 @@ int     process_exit_status(int status, int *success);
 int     process_test(int index);
 char	*ft_strnew(size_t size);
 void	ft_compare_strings(char *mine, char *original);
+char	*ft_itoa(int c);
 #endif

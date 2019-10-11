@@ -23,7 +23,9 @@ char *ft_strnew(size_t size)
 
 void	ft_compare_strings(char *mine, char *original)
 {
-	dprintf(2, "mine: %s, wanted: %s\n", mine, original);
+	if (ft_strlen(mine) != ft_strlen(original))
+		dprintf(2, "len: %lu vs %lu\n", strlen(mine), strlen(original));
+	dprintf(2, "mine:\n__%s__\nwanted:\n__%s__\n\n", mine, original);
 }
 
 void	ft_compare_integers(int mine, int original)
@@ -54,7 +56,6 @@ int		process_test(int index)
 			kill(pid_test, SIGTERM);
 		else if (pid_received == pid_timeout)
 			kill(pid_timeout, SIGTERM);
-//		wait(NULL);
 		return (ret);
 	}
 	exit(1);

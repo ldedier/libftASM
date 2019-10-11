@@ -46,6 +46,7 @@ TEST_SRCS =		ft_bzero_tester.c\
 				ft_strequ_tester.c\
 				checker_tools.c\
 				ft_atoi_tester.c\
+				ft_itoa.c\
 				main.c 
 
 SRCS =	ft_isdigit.s ft_isalpha.s ft_isalnum.s ft_isprint.s ft_isascii.s\

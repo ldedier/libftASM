@@ -51,7 +51,10 @@ int		ft_putchar_tester(void)
 	int		fds[2];
 	int		i;
 
-return (0);
+	(void)fds;
+	(void)i;
+	return (0);
+	/*
 	pipe(fds);
 	dup2(fds[1], 1);
 	i = 'a';
@@ -61,4 +64,5 @@ return (0);
 			return (1);
 	}
 	return (0);
+	*/
 }

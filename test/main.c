@@ -14,9 +14,9 @@
 #include "libftasm_checker.h"
 
 int g_verbose = 1;
-int g_asynchronous = 1;
-//char *totest = "memcpy";
-char *totest = NULL;
+int g_asynchronous = 0;
+char *totest = "puts";
+//char *totest = NULL;
 
 t_test_func	g_funcs[NB_FUNCTIONS] = 
 {
@@ -80,8 +80,8 @@ int main(void)
 					success++;
 				}
 			}
+			printf("\n");
 		}
-		printf("\n");
 		i++;
 	}
 	printf("\npassed %d / %d tests !\n", success, NB_FUNCTIONS);
