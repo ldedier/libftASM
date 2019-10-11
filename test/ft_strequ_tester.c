@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs_tester.c                                    :+:      :+:    :+:   */
+/*   ft_strequ_tester.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libftasm_checker.h"
 
-int		ft_abs_tester(void)
+int		ft_strequ_tester(void)
 {
 	return (1);
 }

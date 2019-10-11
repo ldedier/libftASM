@@ -38,10 +38,9 @@ t_test_func	g_funcs[NB_FUNCTIONS] =
 	//bonus
 	{"strcpy", &ft_strcpy_tester},
 	{"putchar", &ft_putchar_tester},
-	{"puts_fd", &ft_puts_fd_tester},
-	{"abs", &ft_abs_tester},
-	{"min", &ft_min_tester},
-	{"max", &ft_max_tester}
+	{"putstr_fd", &ft_putstr_fd_tester},
+	{"strequ", &ft_strequ_tester},
+	{"atoi", &ft_atoi_tester}
 };
 
 int main(void)
@@ -56,7 +55,8 @@ int main(void)
 	i = 0;
 	while (i < NB_FUNCTIONS)
 	{
-		if (!totest || (totest && !strcmp(g_funcs[i].name, totest)))
+		
+		if ((!totest || (totest && !strcmp(g_funcs[i].name, totest))) && strcmp(g_funcs[i].name, "putchar"))
 		{
 			if (g_asynchronous)
 			{
@@ -85,7 +85,5 @@ int main(void)
 		i++;
 	}
 	printf("\npassed %d / %d tests !\n", success, NB_FUNCTIONS);
-	ft_strcmp("dqdqw", "dsad");
-	printf("hehe\n");
 	return (ret);
 }

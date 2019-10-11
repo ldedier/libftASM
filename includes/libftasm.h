@@ -18,6 +18,7 @@
 # include <string.h>
 # include <stdio.h>
 
+
 void				ft_bzero(void *s, size_t n);
 char				*ft_strcat(char *dest, char const *src);
 int					ft_isalpha(int c);
@@ -33,14 +34,13 @@ size_t				ft_strlen(char const *s);
 void				*ft_memset(void *s, int c, size_t n);
 void				*ft_memcpy(void *dest, void const *src, size_t n);
 char				*ft_strdup(char const *s);
-void				ft_putchar(char c);
 
 void				ft_cat(int fd);
 
+int					ft_putchar(char c);
 char				*ft_strcpy(char *dest, char const *src);
-void				ft_puts_fd(char const *s, int fd);
-int					ft_abs(int a);
-int					ft_min(int a, int b);
-int					ft_max(int a, int b);
-int					ft_strcmp(const char *s1, const char *s2);
+void				ft_putstr_fd(char const *s, int fd);
+int					ft_strequ(const char *s1, const char *s2);
+int					ft_atoi(const char *s);
+
 #endif

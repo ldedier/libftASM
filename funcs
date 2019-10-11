@@ -16,7 +16,6 @@ int		ft_putchar_tester
 int		ft_cat_tester
 int		ft_strcpy_tester
 int		ft_putendl_tester
-int		ft_puts_fd_tester
-int		ft_abs_tester
-int		ft_min_tester
-int		ft_max_tester
+int		ft_putstr_fd_tester
+int		ft_atoi_tester
+int		ft_strequ_tester

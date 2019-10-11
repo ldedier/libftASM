@@ -28,7 +28,7 @@ int     ft_strcat_tester(void)
 
 	strcat(&str1[10], "hehehe on strcat encore une fois haha");
 	ft_strcat(&str2[10], "hehehe on strcat encore une fois haha");
-	if (ft_strcmp(str1, str2))
+	if (strcmp(str1, str2))
 	{
 		if (g_verbose)
 			ft_compare_strings(str2, str1);

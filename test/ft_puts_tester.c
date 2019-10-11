@@ -41,7 +41,7 @@ int		ft_puts_test(char *str, int fdin)
 			dprintf(2, "puts error on %s\n", str);
 			ft_compare_strings(buffer, buffer2);
 		}
-		return (0);
+		return (1);
 	}
 	return (0);
 }

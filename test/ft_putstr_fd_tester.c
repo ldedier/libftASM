@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puts_fd_tester.c                                :+:      :+:    :+:   */
+/*   ft_putstr_fd_tester.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libftasm_checker.h"
 
-int		ft_puts_fd_tester(void)
+int		ft_putstr_fd_tester(void)
 {
 	return (1);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min_tester.c                                    :+:      :+:    :+:   */
+/*   ft_putendl_tester.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libftasm_checker.h"
 
-int		ft_min_tester(void)
+int		ft_putendl_tester(void)
 {
-	return (1);
+	return (0);
 }
