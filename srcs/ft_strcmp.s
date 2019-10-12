@@ -2,13 +2,9 @@ section .text
 
 global _ft_strcmp
 
-extern			_ft_strlen
+extern	_ft_strlen
 
-
-
-
-
-_ft_strequ:
+_ft_strcmp:
 
 	sub rsp, 8
 
@@ -31,20 +27,23 @@ _ft_strequ:
 	pop rdi
 
 	cmp rdx, rax
-	cmovg rax, rdx
+	cmovl rax, rdx
 
 	mov rcx, rax ; get minimum of both strlen
+	inc rcx
 
-	push rcx
-	xor rax, rax
 	cld
-	repe cmpsb
-	jz .equals
-	setz al
+	repe cmpsb ; rdi and rsi -> added of rax + 1
+
+	dec rdi
+	dec rsi
+
+	
+	xor rax, rax
+	xor rcx, rcx
+
+	mov byte al, [rdi]
+	mov byte cl, [rsi]
+	sub eax, ecx
 	add rsp, 8
 	ret
-
-
-.equals
-	xor rax, rax
-	ret 

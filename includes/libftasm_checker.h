@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <signal.h>
 
-# define NB_FUNCTIONS	20
+# define NB_FUNCTIONS	21
 # define TIMEOUT_LIMIT	5
 
 
@@ -83,6 +83,7 @@ int		ft_cat_tester(void);
 int		ft_strcpy_tester(void);
 int		ft_putstr_fd_tester(void);
 int		ft_strequ_tester(void);
+int		ft_strcmp_tester(void);
 int		ft_atoi_tester(void);
 
 void    ft_compare_integers(int mine, int original);

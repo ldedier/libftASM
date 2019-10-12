@@ -42,6 +42,7 @@ int					ft_putchar(int c);
 char				*ft_strcpy(char *dest, char const *src);
 void				ft_putstr_fd(char const *s, int fd);
 int					ft_strequ(const char *s1, const char *s2);
+int					ft_strcmp(const char *s1, const char *s2);
 int					ft_atoi(const char *s);
 
 #endif

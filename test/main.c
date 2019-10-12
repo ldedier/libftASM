@@ -15,7 +15,7 @@
 
 int g_verbose = 1;
 int g_asynchronous = 1;
-//char *totest = "putchar";
+//char *totest = "atoi";
 char *totest = NULL;
 
 t_test_func	g_funcs[NB_FUNCTIONS] = 
@@ -40,6 +40,7 @@ t_test_func	g_funcs[NB_FUNCTIONS] =
 	{"putchar", &ft_putchar_tester},
 	{"putstr_fd", &ft_putstr_fd_tester},
 	{"strequ", &ft_strequ_tester},
+	{"strcmp", &ft_strcmp_tester},
 	{"atoi", &ft_atoi_tester}
 };
 

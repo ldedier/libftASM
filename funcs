@@ -19,3 +19,4 @@ int		ft_putendl_tester
 int		ft_putstr_fd_tester
 int		ft_atoi_tester
 int		ft_strequ_tester
+int		ft_strcmp_tester

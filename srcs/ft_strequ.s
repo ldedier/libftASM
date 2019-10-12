@@ -27,9 +27,10 @@ _ft_strequ:
 	pop rdi
 
 	cmp rdx, rax
-	cmovg rax, rdx
+	cmovl rax, rdx
 
 	mov rcx, rax ; get minimum of both strlen
+	inc rcx;
 
 	xor rax, rax
 	cld
