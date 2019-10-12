@@ -67,7 +67,7 @@ ASMFLAGS = -f macho64
 CFLAGS = -Wall -Werror -Wextra
 LFLAGS = -L. -lfts
 
-all: $(CHECKER)
+all: $(NAME)
 
 $(CHECKER): $(NAME) $(TEST_OBJECTS)
 	$(GCC)  $(TEST_OBJECTS) -o $(CHECKER) $(LFLAGS) -Wl,-no_pie
