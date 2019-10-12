@@ -30,7 +30,7 @@ _ft_strequ:
 	cmovl rax, rdx
 
 	mov rcx, rax ; get minimum of both strlen
-	inc rcx;
+	inc rcx
 
 	xor rax, rax
 	cld

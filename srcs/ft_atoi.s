@@ -47,7 +47,6 @@ _ft_atoi:
 .inc_sign:
 	inc rsi
 .fill_res:
-;	mov rsi, rdi
 	xor rdi, rdi
 	xor rdx, rdx
 .fill_loop:
