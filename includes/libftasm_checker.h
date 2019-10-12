@@ -16,6 +16,7 @@
 # include "libftasm.h"
 # include <ctype.h>
 # include <stdio.h>
+# include <limits.h>
 # include <signal.h>
 
 # define NB_FUNCTIONS	21

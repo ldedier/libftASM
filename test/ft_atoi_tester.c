@@ -48,5 +48,31 @@ int		ft_atoi_tester(void)
 		free(str);
 		i++;
 	}
+	if (test_atoi("40320430505"))
+		return (1);
+	if (test_atoi("                 4"))
+		return (1);
+	if (test_atoi("                -53"))
+		return (1);
+	if (test_atoi("            \t\t       532"))
+		return (1);
+	if (test_atoi("+          	\t\t\t    5d32"))
+		return (1);
+	if (test_atoi("0423d55"))
+		return (1);
+	if (test_atoi("+-0423d55"))
+		return (1);
+	str = ft_itoa(INT_MIN);
+	if (test_atoi("str"))
+	{
+		free(str);
+		return (1);
+	}
+	str = ft_itoa(INT_MAX);
+	if (test_atoi("str"))
+	{
+		free(str);
+		return (1);
+	}
 	return (0);
 }
