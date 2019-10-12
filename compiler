@@ -1,1 +1,0 @@
-nasm test.s -f macho64 -o test.o && ld test.o -o test
