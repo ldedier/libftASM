@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 23:47:30 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/03 23:47:30 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/29 18:04:26 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <limits.h>
 # include <signal.h>
 
-# define NB_FUNCTIONS	21
+# define NB_FUNCTIONS	15
 # define TIMEOUT_LIMIT	5
 
 
