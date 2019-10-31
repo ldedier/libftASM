@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 23:47:30 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/03 23:47:30 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/31 12:31:26 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <limits.h>
 # include <signal.h>
+# include <fcntl.h>
 
 # define NB_FUNCTIONS	21
 # define TIMEOUT_LIMIT	5

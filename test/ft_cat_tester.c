@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 11:02:58 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/11 16:08:59 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/31 12:35:12 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_cat_c(int fd)
 	char buffer[4096];
 	int ret;
 
-	while ((ret = read(fd, buffer, 4095)))
+	while ((ret = read(fd, buffer, 4095)) > 0)
 	{
 		buffer[ret] = 0;
 		printf("%s", buffer);
@@ -76,7 +76,7 @@ int		ft_cat_tester(void)
 	i = 0;
 	while (i < 1000)
 	{
-		if (ft_cat_test(fds[0], "auteur"))
+		if (ft_cat_test(fds[0], "Makefile"))
 			return (1);
 		i++;
 	}

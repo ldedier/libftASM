@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 02:07:47 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/12 02:07:47 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/31 13:56:00 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int test_strcmp(char *s1, char *s2)
 
 	mine = ft_strcmp(s1, s2);
 	original = strcmp(s1, s2);
+
+//	dprintf(2, "%s %s => %d %d\n", s1, s2, mine, original);
 	if (mine != original)
 	{
 		dprintf(2, "strcmp error for __%s__, __%s__\n", s1, s2);

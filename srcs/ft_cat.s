@@ -3,13 +3,15 @@ section .text
 global 	_ft_cat
 
 extern	_ft_putstr
-extern	_ft_hello
 
 ;rdi : int fd
 
 _ft_cat:
 
-	sub rsp, 4096 + 8; 4096
+	cmp edi, 0
+	jl .end
+
+	sub rsp, 4096 + 8
 	mov rsi, rsp ; get address of the top of the stack in rsi (buffer)
 	push rdi
 
@@ -21,9 +23,20 @@ _ft_cat:
 	push rdi
 	push rsi
 	syscall
+
+	js .pop_and_end
+	jc .pop_and_end
+	jmp .check_read_end
+
+.pop_and_end:
 	pop rsi
-	cmp rax, 0
+	jmp .end_cat
+
+.check_read_end
+	pop rsi
+	cmp eax, 0
 	jle .end_cat
+
 	mov rcx, 0
 	mov byte [rsi + rax], cl ; buffer[ret] = 0
 	mov rdi, rsi
@@ -35,4 +48,5 @@ _ft_cat:
 .end_cat:
 	pop rdi
 	add rsp, 4096 + 8
+.end:
 	ret

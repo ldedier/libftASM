@@ -37,7 +37,6 @@ _ft_strcmp:
 
 	dec rdi
 	dec rsi
-
 	
 	xor rax, rax
 	xor rcx, rcx

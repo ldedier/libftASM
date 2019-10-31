@@ -6,12 +6,12 @@
 #    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/03 19:03:26 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/11 18:15:46 by ldedier          ###   ########.fr        #
+#    Updated: 2019/10/31 13:56:16 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libfts.a
-GCC = gcc -g3 #-fsanitize=address
+GCC = gcc -g3
 AS = nasm -g 
 
 SRCDIR = srcs
