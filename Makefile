@@ -6,7 +6,7 @@
 #    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/03 19:03:26 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/31 13:56:16 by ldedier          ###   ########.fr        #
+#    Updated: 2019/10/31 14:06:27 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ TEST_SRCS =		ft_bzero_tester.c\
 				ft_toupper_tester.c\
 				ft_tolower_tester.c\
 				ft_puts_tester.c\
+				ft_putstr_tester.c\
 				ft_strlen_tester.c\
 				ft_memset_tester.c\
 				ft_memcpy_tester.c\
@@ -50,10 +51,10 @@ TEST_SRCS =		ft_bzero_tester.c\
 				ft_itoa.c\
 				main.c 
 
-SRCS =	ft_isdigit.s ft_isalpha.s ft_isalnum.s ft_isprint.s ft_isascii.s\
-		ft_tolower.s ft_toupper.s ft_bzero.s ft_strlen.s ft_strcat.s\
-		ft_strcpy.s ft_puts.s ft_memset.s ft_memcpy.s ft_strdup.s\
-		ft_hello.s ft_cat.s ft_putstr.s ft_putchar.s ft_putstr_fd.s\
+SRCS =	ft_isdigit.s ft_isalpha.s ft_isalnum.s ft_isprint.s ft_isascii.s \
+		ft_tolower.s ft_toupper.s ft_bzero.s ft_strlen.s ft_strcat.s \
+		ft_strcpy.s ft_puts.s ft_memset.s ft_memcpy.s ft_strdup.s \
+		ft_hello.s ft_cat.s ft_putstr.s ft_putchar.s ft_putstr_fd.s \
 		ft_strequ.s ft_strcmp.s ft_atoi.s
 
 OBJECTS = $(addprefix $(OBJDIR)/, $(SRCS:%.s=%.o))

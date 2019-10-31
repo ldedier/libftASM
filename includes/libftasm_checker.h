@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 23:47:30 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/31 12:31:26 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/31 14:08:19 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <signal.h>
 # include <fcntl.h>
 
-# define NB_FUNCTIONS	21
+# define NB_FUNCTIONS	23
 # define TIMEOUT_LIMIT	5
 
 
@@ -73,6 +73,7 @@ int		ft_isprint_tester(void);
 int		ft_toupper_tester(void);
 int		ft_tolower_tester(void);
 int		ft_puts_tester(void);
+int		ft_putstr_tester(void);
 
 int		ft_strlen_tester(void);
 int		ft_memset_tester(void);
