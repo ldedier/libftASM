@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 11:02:58 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/11 15:58:54 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/12/02 10:54:34 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int		ft_test_recur(char *str, int recur, int max_recur, int fdin)
 {
 	int i;
 
-	(void)fdin;
 	if (recur == max_recur)
 	{
 		str[recur] = 0;
@@ -99,6 +98,7 @@ int		ft_puts_tester(void)
 		}
 		i++;
 	}
+	ft_puts_test(NULL, fds[0]);
 	free(str);
 	return (0);
 }

@@ -27,8 +27,8 @@ _ft_strcpy:
 	
 	pop rdi
 	pop rax
-	xor rdx, rdx
-	mov [rdi + rax], rdx
+	xor dl, dl
+	mov byte [rdi + rax], dl
 	mov rax, rdi
 	add rsp, 8
 	ret

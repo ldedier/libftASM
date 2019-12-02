@@ -10,7 +10,7 @@ extern			_ft_puts
 
 _ft_hello:
 
-	mov rdi, msg
+	lea rdi, [rel msg]
 	sub rsp, 8
 	call _ft_puts
 	add rsp, 8
