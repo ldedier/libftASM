@@ -32,7 +32,7 @@ _ft_cat:
 	pop rsi
 	jmp .end_cat
 
-.check_read_end
+.check_read_end:
 	pop rsi
 	cmp eax, 0
 	jle .end_cat
